@@ -1,6 +1,6 @@
 import logo from '../../logo.svg';
 import './App.css';
-import {Business} from '../Business/Business';
+
 
 const App = () => {
   return (
@@ -19,7 +19,6 @@ const App = () => {
           Learn React
         </a>
       </header>
-      <Business />
     </div>
     
   );
