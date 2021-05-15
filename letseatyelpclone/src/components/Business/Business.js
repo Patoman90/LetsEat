@@ -21,7 +21,7 @@ export const Business = () =>
     return(
         <div className="Business">
             <div className="image-container">
-                <img src={business.imageSrc} alt='Picture of pizza as the image.'/>
+                <img src={business.imageSrc} alt='A pizza'/>
             </div>
             <h2>{business.name}</h2>
             <div className="Business-information">
