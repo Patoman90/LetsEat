@@ -1,7 +1,8 @@
 import logo from '../../logo.svg';
 import './App.css';
+import {Business} from '../Business/Business';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +19,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <Business />
     </div>
+    
   );
 }
 
