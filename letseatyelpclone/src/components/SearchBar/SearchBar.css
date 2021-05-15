@@ -12,13 +12,13 @@
     display: flex;
     justify-content: center;
     margin-bottom: 2.22rem;
-    color: #ffffff;
+    color: floralwhite;
   }
   
   .SearchBar-sort-options li {
     cursor: pointer;
     width: 4.33rem;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid floralwhite;
     padding: 0 2.58rem .33rem 2.58rem;
     line-height: 1.13;
     text-align: center;
@@ -59,20 +59,18 @@
   
   .SearchBar-submit {
     text-align: center;
-  }
-  
-  .SearchBar-submit a {
     border-radius: 4px;
     padding: .72rem 1.7rem;
-    background-color: #cca353;
+    background-color: #f29f04;
     color: #ffffff;
     font-weight: 600;
     transition: background-color .5s;
   }
   
-  .SearchBar-submit a:hover {
+  .SearchBar-submit:hover {
     cursor: pointer;
-    background-color: #a7874b;
+    background-color: #cef204;
+    color:black;
   }
   
   @media only screen and (max-width: 560px) {
