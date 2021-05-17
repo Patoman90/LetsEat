@@ -11,7 +11,8 @@ export class BusinessList extends React.Component
             <div className="BusinessList" >
                 {
                     this.props.businesses.map(business => {
-                        return <Business business={business}/>;
+                        //The business component list item must use a unique key id. In this case it is the businesses own id.
+                        return <Business key={business.id} business={business}/>;
                     })
                 }
             </div>  

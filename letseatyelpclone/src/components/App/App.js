@@ -2,26 +2,25 @@ import React from 'react';
 import './App.css';
 import {BusinessList} from '../BusinessList/BusinessList';
 import {SearchBar} from '../SearchBar/SearchBar';
+import Yelp from '../../util/Yelp';
 
-//Business object to be consumed
-const business = {
-  imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
-  name: 'MarginOtto Pizzeria',
-  address: '1010 Paddington Way',
-  city: 'Flavortown',
-  state: 'NY',
-  zipCode: '10101',
-  category: 'Italian',
-  rating: 4.5,
-  reviewCount: 90
-};
-
-const businesses = [business, business, business, business, business, business ];
 
 export default class App extends React.Component {
 
+  //App Constructor method
+  constructor(props)
+  {
+    super(props);
+    this.state = {businesses: []}; //state set to a empty array of businesses
+    this.searchYelp = this.searchYelp.bind(this); //Bind the current value of this before updating it.
+  }
+
+
+  //searchYelp method
   searchYelp = (term, location, sortBy) => {
-    console.log(`Searching Yelp for ${term}, ${location} and ${sortBy}`);
+    Yelp.searchYelp(term, location, sortBy).then((businesses) => {
+      this.setState({businesses: businesses}); //set the new state to the array of businesses
+    });
   }
 
   render(){
@@ -30,8 +29,8 @@ export default class App extends React.Component {
         <h1 className='App-h1'>
           Let's Eat
         </h1>
-        <SearchBar searchYelp= {this.searchYelp}/>
-        <BusinessList businesses={businesses}/>
+        <SearchBar searchYelp={this.searchYelp}/>
+        <BusinessList businesses={this.state.businesses}/>
       </div>
     );
   }
